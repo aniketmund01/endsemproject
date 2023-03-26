@@ -11,7 +11,6 @@ import { fileURLToPath } from 'url';
 import {register} from "./controllers/auth.js"
 import userRoutes from "./routes/users.js"
 import authRoutes from "./routes/auth.js"
-import { verifyToken } from './middleware/auth.js';
 
 /* Configurations */
 
@@ -44,7 +43,7 @@ app.post("/auth/register", upload.single("picture"), register);
 
 //Routes
 app.use("/auth", authRoutes)
-app.use("/user",userRoutes)
+app.use("/users",userRoutes)
 
 //MONGOOSE setup
 const PORT = process.env.PORT || 6001;
